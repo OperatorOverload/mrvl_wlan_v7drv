@@ -304,7 +304,7 @@ SINT32 mlmeAuthDoSharedKeySeq1(vmacApInfo_t *vmacSta_p, AuthRspSrvApMsg *authRsp
 #ifdef ECOS
 			value = rand();
 #else
-			value = net_random(); //rand();
+			value = prandom_u32(); //rand();
 #endif
 			memcpy(&MgmtRsp->Body.Auth.ChallengeText.Text[i], &value, 4);
 			memcpy(&Challenge[ChallengeIdx].Text[i], &value, 4);

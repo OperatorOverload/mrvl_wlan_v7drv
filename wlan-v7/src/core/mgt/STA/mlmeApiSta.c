@@ -3093,7 +3093,7 @@ extern UINT32 mlmeApiGetTime(vmacStaInfo_t *vStaInfo_p)
 extern UINT32 mlmeApiGenRandomUINT32(vmacStaInfo_t *vStaInfo_p, UINT32 seed)
 {
 #ifdef PORT_TO_LINUX_OS
-	return net_random();
+	return prandom_u32(); //net_random();
 #else /* PORT_TO_LINUX_OS */
 	srand(seed);
 	return rand();

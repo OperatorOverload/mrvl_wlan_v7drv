@@ -241,7 +241,7 @@ void generateRand(UINT8 *Data, UINT32 length)
 
 	for (i = length;i--;)
 	{
-		Data[i] = net_random();
+		Data[i] = prandom_u32();
 	}
 }
 
